@@ -35,7 +35,7 @@ button {
   background-color: transparent;
   color: var(--secondary);
   border: 0;
-  font-size: 2em;
+  font-size: 1.5em;
   font-family: "DM Serif Display", serif;
   font-weight: 400;
   margin-top: 1.5em;
@@ -51,6 +51,7 @@ button:hover {
 .projects,
 .about {
   display: none;
+  padding: 0.5em;
 }
 
 .experience h1 {
@@ -82,7 +83,7 @@ button:hover {
   font-style: italic;
   font-weight: 100;
   font-size: 1.25em;
-  width: 30%;
+  width: 70%;
   line-height: 2em;
 }
 
@@ -103,28 +104,4 @@ button:hover {
 .about a:hover {
   opacity: 0.5;
   cursor: pointer;
-}
-
-@media only screen and (min-device-height: 760px) and (min-device-width: 360px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 4) {
-  .experience h1 {
-    font-size: 1.5em;
-  }
-
-  .projects h1 {
-    font-size: 1em;
-  }
-
-  .experience h2,
-  .projects h2 {
-    font-size: 0.5em;
-  }
-
-  button {
-    font-size: 1em;
-  }
-
-  .about {
-    font-size: 1em;
-    width: 70%;
-  }
 }
