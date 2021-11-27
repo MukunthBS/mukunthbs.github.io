@@ -105,7 +105,7 @@ button:hover {
   cursor: pointer;
 }
 
-@media only screen and (min-device-height: 360px) and (min-device-width: 760px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 4) {
+@media only screen and (min-device-height: 760px) and (min-device-width: 360px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 4) {
   .experience h1 {
     font-size: 1.5em;
   }
