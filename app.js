@@ -9,6 +9,14 @@ $(function () {
     if ($("#name").is(":visible")) {
       $("#name").slideToggle(400, "linear");
     }
+    if (
+      $("#name").is(":hidden") &&
+      $("#experience").is(":visible") &&
+      $("#projects").is(":hidden") &&
+      $("#about").is(":hidden")
+    ) {
+      $("#name").slideToggle(400, "linear");
+    }
     $("#experience").slideToggle(800, "linear");
   });
 });
@@ -24,6 +32,14 @@ $(function () {
     if ($("#name").is(":visible")) {
       $("#name").slideToggle(400, "linear");
     }
+    if (
+      $("#name").is(":hidden") &&
+      $("#experience").is(":hidden") &&
+      $("#projects").is(":visible") &&
+      $("#about").is(":hidden")
+    ) {
+      $("#name").slideToggle(400, "linear");
+    }
     $("#projects").slideToggle(800, "linear");
   });
 });
@@ -37,6 +53,14 @@ $(function () {
       $("#projects").slideToggle(400, "linear");
     }
     if ($("#name").is(":hidden")) {
+      $("#name").slideToggle(400, "linear");
+    }
+    if (
+      $("#name").is(":hidden") &&
+      $("#experience").is(":hidden") &&
+      $("#projects").is(":hidden") &&
+      $("#about").is(":visible")
+    ) {
       $("#name").slideToggle(400, "linear");
     }
     $("#about").slideToggle(800, "linear");
