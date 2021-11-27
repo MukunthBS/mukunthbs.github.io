@@ -104,3 +104,27 @@ button:hover {
   opacity: 0.5;
   cursor: pointer;
 }
+
+@media only screen and (min-width: 768px) {
+  .experience h1 {
+    font-size: 1.5em;
+  }
+
+  .projects h1 {
+    font-size: 1em;
+  }
+
+  .experience h2,
+  .projects h2 {
+    font-size: 0.5em;
+  }
+
+  button {
+    font-size: 1em;
+  }
+
+  .about {
+    font-size: 1em;
+    width: 70%;
+  }
+}
