@@ -39,6 +39,7 @@ button {
   font-family: "DM Serif Display", serif;
   font-weight: 400;
   margin-top: 1.5em;
+  margin-bottom: 1em;
   padding: 0 1em;
 }
 
@@ -53,6 +54,11 @@ button:hover {
 .about {
   display: none;
   padding: 1em;
+}
+
+.experience,
+.projects {
+  margin-bottom: 1em;
 }
 
 .experience h1 {
