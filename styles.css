@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato,wght@1,100&display=swap");
+
+:root {
+  --primary: #161616;
+  --secondary: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  color: var(--secondary);
+}
+
+html,
+body {
+  background-color: var(--primary);
+  scroll-behavior: smooth;
+  text-align: center;
+}
+
+.name {
+  margin-top: 5rem;
+}
+
+.name h1 {
+  font-size: 3rem;
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+}
+
+button {
+  background-color: transparent;
+  color: var(--secondary);
+  border: 0;
+  font-size: 2rem;
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  margin-top: 3rem;
+  padding: 0 1rem;
+}
+
+button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.experience,
+.projects,
+.about {
+  display: none;
+}
+
+.experience h1 {
+  font-family: "Cinzel", serif;
+  font-weight: 400;
+  font-size: 3rem;
+  margin-top: 3rem;
+}
+
+.projects h1 {
+  font-family: "Cinzel", serif;
+  font-weight: 400;
+  font-size: 2rem;
+  margin-top: 3rem;
+}
+
+.experience h2,
+.projects h2 {
+  font-family: "Lato", sans-serif;
+  font-style: italic;
+  font-weight: 100;
+}
+
+.about {
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-family: "Lato", sans-serif;
+  font-style: italic;
+  font-weight: 100;
+  font-size: 1.25rem;
+  width: 30%;
+  line-height: 2rem;
+}
+
+.about p {
+  padding: 0.5rem;
+}
+
+.about p:first-of-type {
+  margin-top: 2rem;
+}
+
+.about a i {
+  margin-top: 2rem;
+  padding: 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.about a:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
