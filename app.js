@@ -44,6 +44,18 @@ $(document).ready(function () {
       });
     });
 
+  $(".projects a h1")
+    .mouseenter(function () {
+      cursor.css({
+        transform: "scale(1.75)",
+      });
+    })
+    .mouseleave(function () {
+      cursor.css({
+        transform: "scale(1)",
+      });
+    });
+
   $(window)
     .mousedown(function () {
       cursor.css({
