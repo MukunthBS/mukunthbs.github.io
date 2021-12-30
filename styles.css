@@ -1,11 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato,wght@1,100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap");
 
 :root {
   --primary: #161616;
   --secondary: #ffffff;
+  cursor: none;
 }
+
+.cursor {
+  width: 15px;
+  height: 15px;
+  border: 1px solid white;
+  border-radius: 50%;
+  position: absolute;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+  pointer-events: none;
+}
+
 
 * {
   margin: 0;
@@ -14,9 +28,32 @@
   color: var(--secondary);
 }
 
+html {
+  background: linear-gradient(
+        45deg,
+        rgba(62, 78, 168, 0.4),
+        rgba(42, 54, 165, 0.6)
+      )
+      fixed,
+    url("bg.png") fixed;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: rainbow 5s linear infinite;
+}
+
+@keyframes rainbow {
+  from {
+    backdrop-filter: hue-rotate(10deg);
+  }
+  to {
+    backdrop-filter: hue-rotate(360deg);
+  }
+}
+
 html,
 body {
-  background-color: var(--primary);
   scroll-behavior: smooth;
   text-align: center;
 }
@@ -26,7 +63,7 @@ body {
 }
 
 .name h1 {
-  font-size: 3em;
+  font-size: 4.5em;
   font-family: "DM Serif Display", serif;
   font-weight: 400;
 }
@@ -45,7 +82,7 @@ button {
 
 button:hover {
   opacity: 0.5;
-  cursor: pointer;
+  cursor: none;
   text-decoration: 1px underline;
 }
 
@@ -53,48 +90,56 @@ button:hover {
 .projects,
 .about {
   display: none;
+  backdrop-filter: blur(10px) brightness(85%);
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px -10px rgba(0, 0, 0, 1);
   padding: 1em;
 }
 
-.experience,
+.experience {
+  margin: 0 20%;
+}
+
 .projects {
-  margin-bottom: 1em;
+  margin: 0 10%;
 }
 
 .experience h1 {
   font-family: "Cinzel", serif;
   font-weight: 400;
-  font-size: 3em;
-  margin-top: 1em;
+  font-size: 2.75em;
+  padding-top: 0.5em;
 }
 
 .projects h1 {
   font-family: "Cinzel", serif;
   font-weight: 400;
   font-size: 2em;
-  margin-top: 1.5em;
+  padding-top: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
 .experience h2,
 .projects h2 {
-  font-family: "Lato", sans-serif;
-  font-style: italic;
+  font-family: "Cormorant Garamond", sans-serif;
   font-weight: 100;
   font-size: 1.25em;
+  padding-bottom: 0.5em;
 }
 
 .about {
-  margin: auto;
-  font-family: "Lato", sans-serif;
-  font-style: italic;
+  margin: 2em auto;
+  font-family: "Cormorant Garamond", sans-serif;
   font-weight: 100;
   font-size: 1.25em;
-  width: 80%;
+  width: 50%;
   line-height: 2em;
 }
 
 .about p {
-  padding: 0.5em;
+  padding: 0.35em 0.5em;
 }
 
 .about p:first-of-type {
@@ -102,12 +147,11 @@ button:hover {
 }
 
 .about a i {
-  margin-top: 2em;
-  padding: 0 0.5em;
+  padding: 0.5em;
   font-size: 1.25em;
 }
 
 .about a:hover {
   opacity: 0.5;
-  cursor: pointer;
+  cursor: none;
 }
