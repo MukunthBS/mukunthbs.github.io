@@ -164,6 +164,14 @@ button:hover {
 }
 
 @media (max-width: 480px) {
+  .name {
+    margin-top: 4em;
+  }
+
+  .name h1 {
+    font-size: 3em;
+  }
+
   .experience {
     margin: 5% auto;
   }
