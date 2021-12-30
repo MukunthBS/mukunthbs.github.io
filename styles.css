@@ -186,6 +186,14 @@ button:hover {
     width: 90%;
   }
 
+  .about p:first-of-type {
+    margin-top: 1em;
+  }
+
+  .about p {
+    font-size: 0.75em;
+  }
+
   .cursor {
     display: none;
   }
@@ -193,7 +201,7 @@ button:hover {
   button {
     margin-top: 1em;
     margin-bottom: 0.5em;
-    padding: 0 0.25em;
+    padding: 0 0.35em;
     font-size: 1em;
   }
 }
