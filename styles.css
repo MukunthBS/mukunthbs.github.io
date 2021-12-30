@@ -157,11 +157,11 @@ button:hover {
 
 @media (max-width: 480px) {
   .experience {
-    margin: auto;
+    margin: 5% auto;
   }
 
   .projects {
-    margin: auto;
+    margin: 5% auto;
   }
 
   .about {
