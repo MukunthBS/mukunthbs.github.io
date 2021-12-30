@@ -20,7 +20,6 @@
   pointer-events: none;
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -154,4 +153,22 @@ button:hover {
 .about a:hover {
   opacity: 0.5;
   cursor: none;
+}
+
+@media (max-width: 480px) {
+  .experience {
+    margin: auto;
+  }
+
+  .projects {
+    margin: auto;
+  }
+
+  .about {
+    margin: auto;
+  }
+
+  .cursor {
+    display: none;
+  }
 }
