@@ -176,13 +176,23 @@ button:hover {
     margin: 5% auto;
   }
 
+  .experience h1 {
+    font-size: 2em;
+    padding: 1em 0.5em 0 0.5em;
+  }
+
   .projects {
     margin: 5% auto;
   }
 
   .projects h1 {
-    padding: 1em;
+    padding: 1em 0.5em 0 0.5em;
     font-size: 1.75em;
+  }
+
+  .experience h2,
+  .projects h2 {
+    font-size: 1em;
   }
 
   .projects a {
