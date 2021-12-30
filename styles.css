@@ -166,6 +166,7 @@ button:hover {
 
   .about {
     margin: auto;
+    width: auto;
   }
 
   .cursor {
