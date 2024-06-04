@@ -2,77 +2,110 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/b0a24c27e6.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="app.js"></script>
-    <title>Mukunth BS</title>
+    <title>Portfolio | Mukunth BS</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="assets/fontawesome/css/brands.css" rel="stylesheet" />
+    <link href="assets/fontawesome/css/solid.css" rel="stylesheet" />
+    <script defer src="app.js"></script>
   </head>
   <body>
-    <div id="cursor" class="cursor"></div>
-    <div id="name" class="name">
-      <h1>Mukunth BS</h1>
-    </div>
-    <div id="about" class="about">
-      <a href="https://www.linkedin.com/in/mukunth-bs/"
-        ><i class="fab fa-linkedin-in"></i
-      ></a>
-      <a href="mailto:bsmukunth@gmail.com"> <i class="fas fa-envelope"></i></a>
-      <a href="https://github.com/MukunthBS"><i class="fab fa-github"></i></a>
-      <p>
-        An adaptive and fast-learning Computer Science and Engineering
-        undergrad.
-      </p>
-      <p>
-        Adept at working independently and collaboratively on projects,
-        proficient in Python, Web Development tools, and Design tools.
-      </p>
-      <p>Committed to achieving visual innovation and beauty.</p>
-    </div>
-    <div id="buttons" name="buttons" class="buttons">
-      <button id="exp-btn" name="exp-btn">experience</button>
-      <button id="prj-btn" name="prj-btn">projects</button>
-      <button id="abt-btn" name="abt-btn">about</button>
-    </div>
-    <div id="experience" class="experience">
-      <h1>R&D Intern</h1>
-      <h2>Nov 2021 - Present</h2>
-      <h2>@ Samsung Research Institute, Bangalore</h2>
-      <h1>Design Head</h1>
-      <h2>Jan 2021 - Dec 2021</h2>
-      <h2>@ VIT Animation Club</h2>
-      <h1>Web Developer</h1>
-      <h2>Aug 2021 - Sep 2021</h2>
-      <h2>@ The Sparks Foundation</h2>
-      <h1>Design Team Core Member</h1>
-      <h2>Mar 2021 - Present</h2>
-      <h2>@ Smile Over Stress VIT</h2>
-    </div>
-    <div id="projects" class="projects">
-      <a href="https://www.samsungprism.com/"
-        ><h1>Memory Tracker for Android Applications</h1></a
-      >
-      <h2><i>for</i> Samsung Research Institute, Bangalore</h2>
-      <a
-        href="https://github.com/MukunthBS/text-summarization-and-feature-extraction"
-        ><h1>
-          Text Summarization and Feature Extraction of Medicine Feedbacks
-        </h1></a
-      >
-      <h2>@ VIT Vellore</h2>
-      <a href="https://github.com/MukunthBS/video-games-sales"
-        ><h1>Visualizing and Predicting Success of Video Games Sales</h1></a
-      >
-      <h2>@ VIT Vellore</h2>
-      <a href="https://github.com/MukunthBS/Payment-Gateway-GRIPSEPT21"
-        ><h1>Payment Gateway Integration</h1></a
-      >
-      <h2><i>for</i> The Sparks Foundation</h2>
+    <div class="container">
+      <div class="name">Mukunth Balaramachandran Srinivasan</div>
+      <div class="nav">
+        <ul>
+          <li onclick="openPopup('education')">education</li>
+          <li onclick="openPopup('works')">works</li>
+          <li onclick="openPopup('interests')">interests</li>
+          <li onclick="openPopup('contact')">contact</li>
+        </ul>
+      </div>
+      <div class="overlay" id="overlay"></div>
+      <div class="pop-ups" id="pop-ups">
+        <div id="education">
+          <div class="title">
+            <span>education</span
+            ><span class="close" onclick="closePopup('education')">x</span>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat,
+            sunt vitae aliquid voluptate veniam vel maiores repellat
+            exercitationem officiis, delectus inventore, debitis illo architecto
+            nesciunt doloremque commodi id. Tempora, dicta. Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Dolorum nesciunt ex ea et,
+            earum autem aliquam quasi dolores totam voluptas odit, dolore
+            molestias cumque nihil adipisci sint fugiat tenetur? Incidunt.
+          </p>
+        </div>
+
+        <div id="works">
+          <div class="title">
+            <span>works</span
+            ><span class="close" onclick="closePopup('works')">x</span>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat,
+            sunt vitae aliquid voluptate veniam vel maiores repellat
+            exercitationem officiis, delectus inventore, debitis illo architecto
+            nesciunt doloremque commodi id. Tempora, dicta. Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Dolorum nesciunt ex ea et,
+            earum autem aliquam quasi dolores totam voluptas odit, dolore
+            molestias cumque nihil adipisci sint fugiat tenetur? Incidunt.
+          </p>
+        </div>
+
+        <div id="interests">
+          <div class="title">
+            <span>interests</span
+            ><span class="close" onclick="closePopup('interests')">x</span>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat,
+            sunt vitae aliquid voluptate veniam vel maiores repellat
+            exercitationem officiis, delectus inventore, debitis illo architecto
+            nesciunt doloremque commodi id. Tempora, dicta. Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Dolorum nesciunt ex ea et,
+            earum autem aliquam quasi dolores totam voluptas odit, dolore
+            molestias cumque nihil adipisci sint fugiat tenetur? Incidunt.
+          </p>
+        </div>
+
+        <div id="contact">
+          <div class="title">
+            <span>contact</span
+            ><span class="close" onclick="closePopup('contact')">x</span>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat,
+            sunt vitae aliquid voluptate veniam vel maiores repellat
+            exercitationem officiis, delectus inventore, debitis illo architecto
+            nesciunt doloremque commodi id. Tempora, dicta. Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Dolorum nesciunt ex ea et,
+            earum autem aliquam quasi dolores totam voluptas odit, dolore
+            molestias cumque nihil adipisci sint fugiat tenetur? Incidunt.
+          </p>
+        </div>
+      </div>
+      <div class="quote">
+        <div>ARS LONGA VITA BREVIS</div>
+        <div>art is eternal, life is short</div>
+      </div>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/mukunth-bs/"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+        <a href="mailto:bsmukunth@gmail.com"><i class="fa-solid fa-at"></i></a>
+        <a href="https://github.com/MukunthBS/"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+      </div>
     </div>
   </body>
 </html>
