@@ -1,225 +1,187 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato,wght@1,100&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&display=swap");
-
-:root {
-  --primary: #161616;
-  --secondary: #ffffff;
-  cursor: none;
+@font-face {
+  font-family: "Heroeau Regular";
+  src: url(assets/fonts/HEROEAU\ ELEGANT\ DEMO.ttf);
 }
 
-.cursor {
-  width: 15px;
-  height: 15px;
-  border: 1px solid white;
-  border-radius: 50%;
-  position: absolute;
-  transition-duration: 50ms;
-  transition-timing-function: ease-out;
-  pointer-events: none;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  user-select: none;
-  color: var(--secondary);
-}
-
-html {
-  background: linear-gradient(
-        45deg,
-        rgba(62, 78, 168, 0.4),
-        rgba(42, 54, 165, 0.6)
-      )
-      fixed,
-    url("bg.png") fixed;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  animation: rainbow 5s linear infinite;
-}
-
-@keyframes rainbow {
-  from {
-    backdrop-filter: hue-rotate(10deg);
-  }
-  to {
-    backdrop-filter: hue-rotate(360deg);
-  }
+@font-face {
+  font-family: "Riesling";
+  src: url(assets/fonts/riesling.ttf);
 }
 
 html,
 body {
-  scroll-behavior: smooth;
-  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(
+    to right top,
+    #0b1110,
+    #090f10,
+    #070e0f,
+    #060b0e,
+    #05090d,
+    #050a0e,
+    #050a10,
+    #050b11,
+    #050e15,
+    #041117,
+    #03141a,
+    #01161c
+  );
+  min-height: 100%;
+  background-attachment: fixed;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
 }
 
 .name {
-  margin-top: 5em;
-}
-
-.name h1 {
-  font-size: 4.5em;
-  font-family: "DM Serif Display", serif;
-  font-weight: 400;
-}
-
-button {
-  background-color: transparent;
-  color: var(--secondary);
-  border: 0;
-  font-size: 1.5em;
-  font-family: "DM Serif Display", serif;
-  font-weight: 400;
+  font-size: 8.5vmin;
   margin-top: 1.5em;
-  margin-bottom: 1em;
-  padding: 0 1em;
+  color: white;
+  font-family: "Cardo", serif;
+  letter-spacing: 2px;
+  text-align: center;
+  transition: all 500ms;
+  pointer-events: none;
 }
 
-button:hover {
-  opacity: 0.5;
-  cursor: none;
-  text-decoration: 1px underline;
+.name:hover {
+  color: #999;
 }
 
-.experience,
-.projects,
-.about {
-  display: none;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px -10px rgba(0, 0, 0, 1);
-  padding: 1em;
+.nav ul {
+  padding-left: 0;
+  margin-top: 5em;
+  text-align: center;
 }
 
-.projects a {
-  text-decoration: none;
-}
-
-.projects a h1:hover {
-  opacity: 0.5;
-  cursor: none;
-}
-
-.experience {
-  margin: 0 20%;
-}
-
-.projects {
-  margin: 0 20%;
-}
-
-.experience h1 {
-  font-family: "Cinzel", serif;
-  font-weight: 400;
-  font-size: 2.75em;
+.nav li {
+  font-size: 2em;
+  color: white;
+  list-style: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 100;
   padding-top: 0.5em;
+  transition: all 500ms;
 }
 
-.projects h1 {
-  font-family: "Cinzel", serif;
-  font-weight: 400;
-  font-size: 2.15em;
-  padding-top: 1em;
-  padding-left: 2em;
-  padding-right: 2em;
+.nav li:hover {
+  color: #999;
+  cursor: pointer;
+  padding-left: 0.1em;
 }
 
-.experience h2,
-.projects h2 {
-  font-family: "Cormorant Garamond", sans-serif;
-  font-weight: 100;
+.links {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #99999910;
+  color: white;
+  text-align: center;
+  font-size: 1.5em;
+  padding: 0.5em 0;
+  backdrop-filter: blur(10px);
+}
+
+.links a {
+  padding: 0 0.25em;
+  transition: all 500ms;
+}
+
+.links a:hover {
+  color: #999;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000075;
+  backdrop-filter: blur(5px);
+  display: none;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.pop-ups {
+  min-width: 70%;
+  max-width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff15;
+  backdrop-filter: blur(10px);
+  color: white;
+  border: 1px solid #666;
+  display: none;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.pop-ups > div {
+  display: none;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.pop-ups .title {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pop-ups .title span {
+  padding: 0 2rem;
+  font-size: 2rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+}
+
+.pop-ups .title .close {
+  transition: all 500ms;
+}
+
+.pop-ups .title .close:hover {
+  text-decoration: underline;
+  rotate: 0 1 0 180deg;
+  cursor: pointer;
+}
+
+.pop-ups p {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 200;
+  padding: 0 2rem;
+  text-align: justify;
+}
+
+.quote {
+  margin: 4em 0;
   font-size: 1.25em;
-  padding-bottom: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.about {
-  margin: 2em auto;
-  font-family: "Cormorant Garamond", sans-serif;
-  font-weight: 100;
-  font-size: 1.25em;
-  width: 50%;
-  line-height: 2em;
+.quote div:first-of-type {
+  font-family: "Heroeau Regular";
+  color: rgb(255, 255, 255);
 }
-
-.about p {
-  padding: 0.35em 0.5em;
-}
-
-.about p:first-of-type {
-  margin-top: 2em;
-}
-
-.about a i {
-  padding: 0.5em;
-  font-size: 1.25em;
-}
-
-.about a:hover {
-  opacity: 0.5;
-  cursor: none;
-}
-
-@media (max-width: 480px) {
-  .name {
-    margin-top: 4em;
-  }
-
-  .name h1 {
-    font-size: 3em;
-  }
-
-  .experience {
-    margin: 5% auto;
-  }
-
-  .experience h1 {
-    font-size: 2em;
-    padding: 1em 0.5em 0 0.5em;
-  }
-
-  .projects {
-    margin: 5% auto;
-  }
-
-  .projects h1 {
-    padding: 1em 0.5em 0 0.5em;
-    font-size: 1.5em;
-  }
-
-  .experience h2,
-  .projects h2 {
-    font-size: 1em;
-  }
-
-  .projects a {
-    text-decoration: none;
-  }
-
-  .about {
-    margin: 5% auto;
-    width: 90%;
-  }
-
-  .about p:first-of-type {
-    margin-top: 1em;
-  }
-
-  .about p {
-    font-size: 0.75em;
-  }
-
-  .cursor {
-    display: none;
-  }
-
-  button {
-    margin-top: 1em;
-    margin-bottom: 0.5em;
-    padding: 0 0.35em;
-    font-size: 1em;
-  }
+.quote div:last-of-type {
+  font-family: "Riesling";
+  color: rgb(255, 255, 255);
 }
