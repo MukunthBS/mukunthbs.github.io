@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Heroeau Regular";
-  src: url(assets/fonts/HEROEAU\ ELEGANT\ DEMO.ttf);
+  src: url("/assets/fonts/HEROEAU ELEGANT DEMO.ttf");
 }
 
 @font-face {
   font-family: "Riesling";
-  src: url(assets/fonts/riesling.ttf);
+  src: url("/assets/fonts/riesling.ttf");
 }
 
 html,
@@ -13,6 +13,7 @@ body {
   margin: 0;
   padding: 0;
   user-select: none;
+  overflow-y: auto;
 }
 
 body {
@@ -56,6 +57,7 @@ a:active {
 /* Navigation */
 .nav {
   padding: 1rem;
+  margin-bottom: 5em;
 }
 
 .nav ul {
@@ -371,17 +373,17 @@ a:active {
   }
 
   .quote {
-    bottom: 6rem;
-    font-size: 1em;
+    bottom: 7rem;
+    font-size: 2vmin;
   }
 
   .name {
-    font-size: 7vmin;
-    margin-top: 1.2em;
+    font-size: 6vmin;
+    margin-top: 3em;
   }
 
   .nav ul {
-    margin-top: 3em;
+    margin-top: 4em;
   }
 
   .nav li {
@@ -416,21 +418,32 @@ a:active {
   }
 
   .quote {
-    bottom: 5rem;
-    font-size: 0.9em;
+    bottom: 7rem;
+    font-size: 3vmin;
   }
 
   .name {
     font-size: 6vmin;
-    margin-top: 1em;
+    margin-top: 3em;
   }
 
   .nav ul {
-    margin-top: 2em;
+    margin-top: 4em;
   }
 
   .nav li {
     font-size: 1.5em;
     padding-top: 0.3em;
+  }
+}
+@media (max-height: 750px) {
+  .quote {
+    bottom: 6rem;
+    font-size: 2vmin;
+  }
+}
+@media (max-height: 575px) {
+  .quote {
+    visibility: hidden;
   }
 }
