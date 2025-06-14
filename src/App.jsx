@@ -20,13 +20,13 @@ function App() {
 
   const renderPopupContent = () => {
     switch (activePopup) {
-      case 'about-me':
+      case 'who-i-am':
         return <AboutMe />;
-      case 'works':
+      case 'what-i-built':
         return <Works />;
-      case 'tech-stack':
+      case 'what-i-use':
         return <TechStack />;
-      case 'contact':
+      case 'where-i-am':
         return <Contact />;
       default:
         return null;
@@ -39,10 +39,10 @@ function App() {
 
       <div className="nav">
         <ul>
-          <li onClick={() => openPopup('about-me')}>About Me</li>
-          <li onClick={() => openPopup('works')}>Works</li>
-          <li onClick={() => openPopup('tech-stack')}>Tech Stack</li>
-          <li onClick={() => openPopup('contact')}>Contact</li>
+          <li onClick={() => openPopup('who-i-am')}>who-i-am</li>
+          <li onClick={() => openPopup('what-i-built')}>what-i-built</li>
+          <li onClick={() => openPopup('what-i-use')}>what-i-use</li>
+          <li onClick={() => openPopup('where-i-am')}>where-i-am</li>
         </ul>
       </div>
 
@@ -51,6 +51,7 @@ function App() {
       <div className={`pop-ups ${isOpen ? 'show' : 'hide'}`}>
         <div className="popup-content">
           <div className="title">
+            <p>portfolio/{activePopup}/</p>
             <span className="close" onClick={closePopup}>
               x
             </span>

@@ -8,6 +8,31 @@
   src: url("/assets/fonts/riesling.ttf");
 }
 
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  transition: all 300ms ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Firefox scrollbar styles */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.05);
+}
+
 html,
 body {
   margin: 0;
@@ -16,22 +41,32 @@ body {
   overflow-y: auto;
 }
 
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
 body {
-  background-image: linear-gradient(
-    to right top,
-    #0b1110,
-    #090f10,
-    #070e0f,
-    #060b0e,
-    #05090d,
-    #050a0e,
-    #050a10,
-    #050b11,
-    #050e15,
-    #041117,
-    #03141a,
-    #01161c
+  background-image: radial-gradient(
+    circle farthest-corner at 50.3% 47.3%,
+    rgb(60, 60, 60) 0.1%,
+    rgb(30, 30, 30) 65%
   );
+  background-size: 200% 200%;
+  animation: gradientAnimation 60s ease infinite;
   min-height: 100%;
   background-attachment: fixed;
 }
@@ -114,7 +149,7 @@ a:active {
   bottom: 0;
   width: 100%;
   height: 100%;
-  background-color: #00000075;
+  background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   visibility: hidden;
   opacity: 0;
@@ -131,37 +166,50 @@ a:active {
   backdrop-filter: blur(10px);
   color: white;
   border: 1px solid #666;
+  border-radius: 10px;
   visibility: hidden;
   opacity: 0;
   transition: all 500ms ease-in-out;
-  max-height: 70vh;
+  max-height: 75vh;
   overflow-y: auto;
 }
 
 .pop-ups .title {
   margin: 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0rem 2rem;
+  padding-right: 1.5rem;
   position: sticky;
   top: 0;
-  background-color: #29292975;
+  background-color: rgba(41, 41, 41, 0.25);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   z-index: 100;
 }
 
+.pop-ups .title p {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+  text-underline-offset: 0.2em;
+}
+
 .pop-ups .title .close {
-  font-size: 2rem;
+  padding: 0.5rem;
+  font-size: 1.75rem;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
   cursor: pointer;
-  transition: all 500ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 .pop-ups .title .close:hover {
   transform: rotateY(180deg);
+  text-decoration: underline;
 }
 
 .pop-ups .content {
@@ -169,7 +217,6 @@ a:active {
   opacity: 0;
   visibility: hidden;
   transition: all 500ms ease-in-out;
-  padding-top: 1em;
 }
 
 /* Quote Section */

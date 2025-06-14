@@ -1,5 +1,6 @@
 .works-container {
   padding: 2rem;
+  padding-top: 0;
   color: white;
 }
 
@@ -24,16 +25,16 @@
 }
 
 .project-card {
-  background-color: rgba(41, 41, 41, 0.5);
+  background-color: rgba(41, 41, 41, 0.25);
   border-radius: 10px;
   padding: 2rem;
   border: 1px solid #666;
   backdrop-filter: blur(10px);
-  transition: all 500ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
   border-color: #999;
 }
 
@@ -62,7 +63,7 @@
   text-decoration: none;
   font-weight: 300;
   font-family: "Josefin Sans", sans-serif;
-  transition: all 500ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 .project-links a:hover {

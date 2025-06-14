@@ -1,5 +1,6 @@
 .about-container {
   padding: 2rem;
+  padding-top: 0;
   color: white;
 }
 
@@ -35,16 +36,16 @@
 .background,
 .philosophy {
   padding: 2rem;
-  background-color: rgba(41, 41, 41, 0.5);
+  background-color: rgba(41, 41, 41, 0.25);
   border-radius: 10px;
   border: 1px solid #666;
   backdrop-filter: blur(10px);
-  transition: all 500ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 .background:hover,
 .philosophy:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
   border-color: #999;
 }
 

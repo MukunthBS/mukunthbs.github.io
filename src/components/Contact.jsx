@@ -5,10 +5,10 @@ const Contact = () => {
   return (
     <div className="contact-container">
       <div className="contact-content">
-        <h2>Contact Me</h2>
+        <h2>contact me</h2>
         <div className="contact-grid">
           <div className="contact-info">
-            <h3>Get in Touch</h3>
+            <h3>get in touch</h3>
             <p>Feel free to reach out for any queries or just a friendly hello!</p>
             <div className="contact-details">
               <div className="contact-item">
@@ -43,7 +43,7 @@ const Contact = () => {
             <div className="form-group">
               <textarea placeholder="Your Message" required></textarea>
             </div>
-            <button type="submit" className="submit-btn">Send Message</button>
+            <button type="submit" className="submit-btn">Send<i className="fa-regular fa-paper-plane"></i></button>
           </form>
         </div>
       </div>
