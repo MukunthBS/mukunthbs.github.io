@@ -1,5 +1,5 @@
-import React from 'react';
-import '../styles/TechStack.css';
+import React from "react";
+import "../styles/TechStack.css";
 
 const TechStack = () => {
   return (
@@ -13,19 +13,19 @@ const TechStack = () => {
               <div className="tech-item">
                 <span className="tech-name">React</span>
                 <div className="tech-level">
-                  <div className="progress" style={{ width: '90%' }}></div>
+                  <div className="progress" style={{ width: "90%" }}></div>
                 </div>
               </div>
               <div className="tech-item">
                 <span className="tech-name">JavaScript</span>
                 <div className="tech-level">
-                  <div className="progress" style={{ width: '85%' }}></div>
+                  <div className="progress" style={{ width: "85%" }}></div>
                 </div>
               </div>
               <div className="tech-item">
                 <span className="tech-name">HTML/CSS</span>
                 <div className="tech-level">
-                  <div className="progress" style={{ width: '95%' }}></div>
+                  <div className="progress" style={{ width: "95%" }}></div>
                 </div>
               </div>
             </div>
@@ -36,13 +36,13 @@ const TechStack = () => {
               <div className="tech-item">
                 <span className="tech-name">Node.js</span>
                 <div className="tech-level">
-                  <div className="progress" style={{ width: '80%' }}></div>
+                  <div className="progress" style={{ width: "80%" }}></div>
                 </div>
               </div>
               <div className="tech-item">
                 <span className="tech-name">Python</span>
                 <div className="tech-level">
-                  <div className="progress" style={{ width: '75%' }}></div>
+                  <div className="progress" style={{ width: "75%" }}></div>
                 </div>
               </div>
             </div>
@@ -53,13 +53,13 @@ const TechStack = () => {
               <div className="tech-item">
                 <span className="tech-name">Git</span>
                 <div className="tech-level">
-                  <div className="progress" style={{ width: '85%' }}></div>
+                  <div className="progress" style={{ width: "85%" }}></div>
                 </div>
               </div>
               <div className="tech-item">
                 <span className="tech-name">Docker</span>
                 <div className="tech-level">
-                  <div className="progress" style={{ width: '70%' }}></div>
+                  <div className="progress" style={{ width: "70%" }}></div>
                 </div>
               </div>
             </div>
@@ -70,4 +70,4 @@ const TechStack = () => {
   );
 };
 
-export default TechStack; 
+export default TechStack;

@@ -11,7 +11,6 @@
 
 .contact-content h2 {
   font-size: 2.5rem;
-  color: white;
   margin-bottom: 3rem;
   text-align: center;
   font-family: "Josefin Sans", sans-serif;
@@ -24,7 +23,8 @@
   gap: 3rem;
 }
 
-.contact-info {
+.contact-info,
+.contact-form {
   padding: 2rem;
   background-color: rgba(41, 41, 41, 0.25);
   border-radius: 10px;
@@ -33,13 +33,13 @@
   transition: all 200ms ease-in-out;
 }
 
-.contact-info:hover {
+.contact-info:hover,
+.contact-form:hover {
   transform: translateY(-2px);
   border-color: #999;
 }
 
 .contact-info h3 {
-  color: white;
   font-size: 1.5rem;
   margin-bottom: 1rem;
   font-family: "Josefin Sans", sans-serif;
@@ -68,19 +68,20 @@
 .contact-item i {
   color: #999;
   font-size: 1.2rem;
-  transition: all 500ms ease-in-out;
-}
-
-.contact-item:hover i {
-  color: white;
+  width: 1.5rem;
+  text-align: center;
+  transition: color 500ms ease-in-out;
 }
 
 .contact-item span {
   color: #999;
   font-family: "Josefin Sans", sans-serif;
-  transition: all 500ms ease-in-out;
+  flex: 1;
+  white-space: nowrap;
+  transition: color 500ms ease-in-out;
 }
 
+.contact-item:hover i,
 .contact-item:hover span {
   color: white;
 }
@@ -96,25 +97,11 @@
 .social-links a {
   color: #999;
   font-size: 1.5rem;
-  transition: all 500ms ease-in-out;
+  transition: color 500ms ease-in-out;
 }
 
 .social-links a:hover {
   color: white;
-}
-
-.contact-form {
-  padding: 2rem;
-  background-color: rgba(41, 41, 41, 0.25);
-  border-radius: 10px;
-  border: 1px solid #666;
-  backdrop-filter: blur(10px);
-  transition: all 200ms ease-in-out;
-}
-
-.contact-form:hover {
-  transform: translateY(-2px);
-  border-color: #999;
 }
 
 .form-group {
@@ -163,23 +150,23 @@
   font-weight: 300;
   font-family: "Josefin Sans", sans-serif;
   cursor: pointer;
-  transition: all 500ms ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  transition: all 500ms ease-in-out;
 }
 
 .submit-btn i {
   padding-bottom: 0.15rem;
   font-size: 1rem;
-  transition: all 200ms;
+  transition: transform 200ms;
 }
 
 .submit-btn:hover {
   background-color: rgba(255, 255, 255, 0.15);
   border-color: #999;
-  color: rgba(255, 255, 255, 1);
+  color: white;
 }
 
 .submit-btn:hover i {

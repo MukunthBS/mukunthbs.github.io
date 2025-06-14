@@ -142,6 +142,23 @@ a:active {
   cursor: pointer;
 }
 
+/* Hide States */
+.pop-ups.hide .title,
+.pop-ups.hide .content {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.pop-ups.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.overlay.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
 /* Popup Styles */
 .overlay {
   position: fixed;
@@ -151,31 +168,39 @@ a:active {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
-  visibility: hidden;
   opacity: 0;
   transition: all 500ms ease-in-out;
+  pointer-events: none;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .pop-ups {
+  opacity: 0;
   min-width: 60%;
   max-width: 90%;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.95);
   backdrop-filter: blur(10px);
   color: white;
   border: 1px solid #666;
   border-radius: 10px;
-  visibility: hidden;
-  opacity: 0;
   transition: all 500ms ease-in-out;
   max-height: 75vh;
   overflow-y: auto;
 }
 
+.pop-ups.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
 .pop-ups .title {
-  margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -183,8 +208,7 @@ a:active {
   padding-right: 1.5rem;
   position: sticky;
   top: 0;
-  background-color: rgba(41, 41, 41, 0.25);
-  backdrop-filter: blur(10px);
+  background-color: rgba(41, 41, 41, 0.9);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   z-index: 100;
 }
@@ -213,10 +237,14 @@ a:active {
 }
 
 .pop-ups .content {
-  z-index: 0;
   opacity: 0;
-  visibility: hidden;
+  transform: translateY(10px);
   transition: all 500ms ease-in-out;
+}
+
+.pop-ups.show .content {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Quote Section */
@@ -245,39 +273,6 @@ a:active {
   color: rgb(255, 255, 255);
   text-align: center;
   margin-top: 0.5em;
-}
-
-/* Show States */
-.overlay.show {
-  visibility: visible;
-  opacity: 1;
-}
-
-.pop-ups.show {
-  visibility: visible;
-  opacity: 1;
-}
-
-.pop-ups.show .content {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Hide States */
-.overlay.hide {
-  visibility: hidden;
-  opacity: 0;
-}
-
-.pop-ups.hide {
-  visibility: hidden;
-  opacity: 0;
-}
-
-.pop-ups.hide .title,
-.pop-ups.hide .content {
-  opacity: 0;
-  visibility: hidden;
 }
 
 /* Common styles for all section components */

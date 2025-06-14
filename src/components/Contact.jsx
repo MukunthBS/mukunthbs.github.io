@@ -1,5 +1,5 @@
-import React from 'react';
-import '../styles/Contact.css';
+import React from "react";
+import "../styles/Contact.css";
 
 const Contact = () => {
   return (
@@ -9,7 +9,9 @@ const Contact = () => {
         <div className="contact-grid">
           <div className="contact-info">
             <h3>get in touch</h3>
-            <p>Feel free to reach out for any queries or just a friendly hello!</p>
+            <p>
+              Feel free to reach out for any queries or just a friendly hello!
+            </p>
             <div className="contact-details">
               <div className="contact-item">
                 <i className="fas fa-envelope"></i>
@@ -43,7 +45,9 @@ const Contact = () => {
             <div className="form-group">
               <textarea placeholder="Your Message" required></textarea>
             </div>
-            <button type="submit" className="submit-btn">Send<i className="fa-regular fa-paper-plane"></i></button>
+            <button type="submit" className="submit-btn">
+              Send<i className="fa-regular fa-paper-plane"></i>
+            </button>
           </form>
         </div>
       </div>
@@ -51,4 +55,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;

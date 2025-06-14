@@ -1,5 +1,5 @@
-import React from 'react';
-import '../styles/AboutMe.css';
+import React from "react";
+import "../styles/AboutMe.css";
 
 const AboutMe = () => {
   return (
@@ -7,13 +7,21 @@ const AboutMe = () => {
       <div className="about-content">
         <h2>about me</h2>
         <p className="intro">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam quaerat delectus veritatis aliquid, molestiae vero. Autem distinctio, dignissimos enim totam cupiditate sed id hic harum accusamus atque dolores et fugit.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+          quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam
+          quaerat delectus veritatis aliquid, molestiae vero. Autem distinctio,
+          dignissimos enim totam cupiditate sed id hic harum accusamus atque
+          dolores et fugit.
         </p>
         <div className="about-details">
           <section className="background">
             <h3>background</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam quaerat delectus veritatis aliquid, molestiae vero. Autem distinctio, dignissimos enim totam cupiditate sed id hic harum accusamus atque dolores et fugit.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+              quos. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Veniam quaerat delectus veritatis aliquid, molestiae vero. Autem
+              distinctio, dignissimos enim totam cupiditate sed id hic harum
+              accusamus atque dolores et fugit.
             </p>
           </section>
           <section className="philosophy">
@@ -31,4 +39,4 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe; 
+export default AboutMe;

@@ -1,32 +1,44 @@
-import React, { useState } from 'react';
-import './App.css';
-import AboutMe from './components/AboutMe';
-import Works from './components/Works';
-import TechStack from './components/TechStack';
-import Contact from './components/Contact';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import AboutMe from "./components/AboutMe";
+import Works from "./components/Works";
+import TechStack from "./components/TechStack";
+import Contact from "./components/Contact";
 
 function App() {
   const [activePopup, setActivePopup] = useState(null);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const openPopup = (name) => {
     setActivePopup(name);
+    setIsVisible(true);
+    // Use requestAnimationFrame to ensure the element is in the DOM before starting animation
+    requestAnimationFrame(() => {
+      setIsAnimating(true);
+    });
   };
 
   const closePopup = () => {
-    setActivePopup(null);
+    setIsAnimating(false);
+    // Wait for animation to complete before removing content
+    setTimeout(() => {
+      setIsVisible(false);
+      setActivePopup(null);
+    }, 500); // Match this with CSS transition duration
   };
 
-  const isOpen = Boolean(activePopup);
-
   const renderPopupContent = () => {
+    if (!activePopup) return null;
+
     switch (activePopup) {
-      case 'who-i-am':
+      case "who-i-am":
         return <AboutMe />;
-      case 'what-i-built':
+      case "what-i-built":
         return <Works />;
-      case 'what-i-use':
+      case "what-i-use":
         return <TechStack />;
-      case 'where-i-am':
+      case "where-i-am":
         return <Contact />;
       default:
         return null;
@@ -39,28 +51,31 @@ function App() {
 
       <div className="nav">
         <ul>
-          <li onClick={() => openPopup('who-i-am')}>who-i-am</li>
-          <li onClick={() => openPopup('what-i-built')}>what-i-built</li>
-          <li onClick={() => openPopup('what-i-use')}>what-i-use</li>
-          <li onClick={() => openPopup('where-i-am')}>where-i-am</li>
+          <li onClick={() => openPopup("who-i-am")}>who-i-am</li>
+          <li onClick={() => openPopup("what-i-built")}>what-i-built</li>
+          <li onClick={() => openPopup("what-i-use")}>what-i-use</li>
+          <li onClick={() => openPopup("where-i-am")}>where-i-am</li>
         </ul>
       </div>
 
-      <div className={`overlay ${isOpen ? 'show' : 'hide'}`} onClick={closePopup} />
+      {isVisible && (
+        <>
+          <div
+            className={`overlay ${isAnimating ? "show" : ""}`}
+            onClick={closePopup}
+          />
 
-      <div className={`pop-ups ${isOpen ? 'show' : 'hide'}`}>
-        <div className="popup-content">
-          <div className="title">
-            <p>portfolio/{activePopup}/</p>
-            <span className="close" onClick={closePopup}>
-              x
-            </span>
+          <div className={`pop-ups ${isAnimating ? "show" : ""}`}>
+            <div className="title">
+              <p>portfolio/{activePopup}/</p>
+              <span className="close" onClick={closePopup}>
+                x
+              </span>
+            </div>
+            <div className="content">{renderPopupContent()}</div>
           </div>
-          <div className="content">
-            {renderPopupContent()}
-          </div>
-        </div>
-      </div>
+        </>
+      )}
 
       <div className="quote">
         <div>ARS LONGA VITA BREVIS</div>

@@ -11,7 +11,6 @@
 
 .tech-content h2 {
   font-size: 2.5rem;
-  color: white;
   margin-bottom: 3rem;
   text-align: center;
   font-family: "Josefin Sans", sans-serif;
@@ -25,9 +24,9 @@
 }
 
 .tech-category {
+  padding: 2rem;
   background-color: rgba(41, 41, 41, 0.25);
   border-radius: 10px;
-  padding: 2rem;
   border: 1px solid #666;
   backdrop-filter: blur(10px);
   transition: all 200ms ease-in-out;
@@ -39,7 +38,6 @@
 }
 
 .tech-category h3 {
-  color: white;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   text-align: center;
