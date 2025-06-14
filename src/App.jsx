@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
-import BehindTheScenes from './components/BehindTheScenes';
-import ThePrologue from './components/ThePrologue';
-import Chapters from './components/Chapters';
-import SpinOffs from './components/SpinOffs';
+import AboutMe from './components/AboutMe';
+import Works from './components/Works';
+import TechStack from './components/TechStack';
+import Contact from './components/Contact';
 
 function App() {
   const [activePopup, setActivePopup] = useState(null);
@@ -20,14 +20,14 @@ function App() {
 
   const renderPopupContent = () => {
     switch (activePopup) {
-      case 'behind-the-scenes':
-        return <BehindTheScenes />;
-      case 'the-prologue':
-        return <ThePrologue />;
-      case 'chapters':
-        return <Chapters />;
-      case 'spin-offs':
-        return <SpinOffs />;
+      case 'about-me':
+        return <AboutMe />;
+      case 'works':
+        return <Works />;
+      case 'tech-stack':
+        return <TechStack />;
+      case 'contact':
+        return <Contact />;
       default:
         return null;
     }
@@ -39,10 +39,10 @@ function App() {
 
       <div className="nav">
         <ul>
-          <li onClick={() => openPopup('behind-the-scenes')}>behind-the-scenes</li>
-          <li onClick={() => openPopup('the-prologue')}>the-prologue</li>
-          <li onClick={() => openPopup('chapters')}>chapters</li>
-          <li onClick={() => openPopup('spin-offs')}>spin-offs</li>
+          <li onClick={() => openPopup('about-me')}>About Me</li>
+          <li onClick={() => openPopup('works')}>Works</li>
+          <li onClick={() => openPopup('tech-stack')}>Tech Stack</li>
+          <li onClick={() => openPopup('contact')}>Contact</li>
         </ul>
       </div>
 
