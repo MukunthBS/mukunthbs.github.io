@@ -11,73 +11,318 @@
 
 .about-content h2 {
   font-size: 2.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 300;
-}
-
-.intro {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #999;
   margin-bottom: 3rem;
   text-align: center;
   font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+.about-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+}
+
+.intro-section {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  padding: 2.5rem;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 400ms ease-in-out;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.intro-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0;
+  transition: opacity 400ms ease-in-out;
+}
+
+.intro-section:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.intro-section:hover::before {
+  opacity: 1;
+}
+
+.profile-image {
+  flex-shrink: 0;
+  width: 180px;
+  height: 180px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: all 400ms ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 400ms ease-in-out;
+  filter: grayscale(40%);
+}
+
+.profile-image:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.profile-image:hover img {
+  filter: none;
+}
+
+.intro {
+  flex: 1;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin: 0;
+  transition: all 400ms ease-in-out;
+  position: relative;
+  padding-left: 1rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.intro-section:hover .intro {
+  color: white;
+  border-left-color: rgba(255, 255, 255, 0.3);
 }
 
 .about-details {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
 }
 
-.background,
+.background {
+  padding: 1rem;
+  background-color: rgba(41, 41, 41, 0.25);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  transition: all 300ms ease-in-out;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.background:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.background:hover::before {
+  opacity: 1;
+}
+
+.background h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+}
+
+.background h3::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.background p {
+  font-weight: 300;
+  color: #bbbbbb;
+  line-height: 1.8;
+  font-family: "Josefin Sans", sans-serif;
+  position: relative;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 300ms ease-in-out;
+}
+
+.background:hover p {
+  color: white;
+}
+
 .philosophy {
   padding: 2rem;
   background-color: rgba(41, 41, 41, 0.25);
-  border-radius: 10px;
-  border: 1px solid #666;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  transition: all 200ms ease-in-out;
+  position: relative;
+  overflow: hidden;
+  transition: all 300ms ease-in-out;
 }
 
-.background:hover,
+.philosophy::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
 .philosophy:hover {
-  transform: translateY(-2px);
-  border-color: #999;
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
-.background h3,
+.philosophy:hover::before {
+  opacity: 1;
+}
+
 .philosophy h3 {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
 }
 
-.background p,
-.philosophy li {
-  color: #999;
-  line-height: 1.6;
-  font-family: "Josefin Sans", sans-serif;
+.philosophy h3::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 .philosophy ul {
   list-style: none;
   padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
 }
 
 .philosophy li {
-  margin-bottom: 0.8rem;
-  padding-left: 1.5rem;
   position: relative;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  transition: all 300ms ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.philosophy li:before {
+.philosophy li::before {
   content: "•";
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: all 300ms ease-in-out;
+}
+
+.philosophy li::after {
+  content: "";
   position: absolute;
+  bottom: 0;
   left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), transparent);
+  transition: width 300ms ease-in-out;
+}
+
+.philosophy li:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.9);
+  transform: translateX(3px);
+  color: white;
+}
+
+.philosophy li:hover::before {
+  color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+
+.philosophy li:hover::after {
+  width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -91,5 +336,34 @@
 
   .about-details {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .philosophy ul {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .intro-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .profile-image {
+    width: 160px;
+    height: 160px;
+  }
+
+  .intro {
+    padding-left: 0;
+    border-left: none;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+  }
+
+  .intro-section:hover .intro {
+    border-top-color: rgba(255, 255, 255, 0.3);
   }
 }

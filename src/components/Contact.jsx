@@ -10,16 +10,19 @@ const Contact = () => {
           <div className="contact-info">
             <h3>get in touch</h3>
             <p>
-              Feel free to reach out for any queries or just a friendly hello!
+              Feel free to reach out for any queries or just a friendly hello!{" "}
+              <i className="fa-solid fa-heart"></i>
             </p>
             <div className="contact-details">
               <div className="contact-item">
                 <i className="fas fa-envelope"></i>
-                <span>bsmukunth@gmail.com</span>
-              </div>
-              <div className="contact-item">
-                <i className="fas fa-phone"></i>
-                <span>+1 (385)-563-8216</span>
+                <span
+                  onClick={() =>
+                    (window.location.href = "mailto:bsmukunth@gmail.com")
+                  }
+                >
+                  bsmukunth@gmail.com
+                </span>
               </div>
               <div className="contact-item">
                 <i className="fas fa-map-marker-alt"></i>
@@ -27,10 +30,18 @@ const Contact = () => {
               </div>
             </div>
             <div className="social-links">
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/MukunthBS"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-github"></i>
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://linkedin.com/in/mukunth-bs"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fab fa-linkedin"></i>
               </a>
             </div>

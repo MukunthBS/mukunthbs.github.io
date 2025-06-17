@@ -62,11 +62,11 @@ body {
 body {
   background-image: radial-gradient(
     circle farthest-corner at 50.3% 47.3%,
-    rgb(60, 60, 60) 0.1%,
-    rgb(30, 30, 30) 65%
+    rgb(80, 80, 80) 0.1%,
+    rgb(20, 20, 20) 65%
   );
-  background-size: 200% 200%;
-  animation: gradientAnimation 60s ease infinite;
+  background-size: 300% 300%;
+  animation: gradientAnimation 45s ease infinite;
   min-height: 100%;
   background-attachment: fixed;
 }
@@ -204,13 +204,46 @@ a:active {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0rem 2rem;
-  padding-right: 1.5rem;
+  padding: 0.25rem 1.5rem;
   position: sticky;
   top: 0;
   background-color: rgba(41, 41, 41, 0.9);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   z-index: 100;
+}
+
+.pop-ups .title .title-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pop-ups .title .title-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 200ms ease-in-out;
+}
+
+.pop-ups .title .title-icon i {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 200ms ease-in-out;
+}
+
+.pop-ups .title .title-icon:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.pop-ups .title .title-icon:hover i {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .pop-ups .title p {
@@ -220,6 +253,7 @@ a:active {
   text-decoration: underline;
   text-decoration-color: rgba(255, 255, 255, 0.3);
   text-underline-offset: 0.2em;
+  margin: 0;
 }
 
 .pop-ups .title .close {
@@ -275,46 +309,6 @@ a:active {
   margin-top: 0.5em;
 }
 
-/* Common styles for all section components */
-.bts-container,
-.prologue-container,
-.chapters-container,
-.spin-offs-container {
-  padding: 1rem;
-  color: white;
-}
-
-.bts-content,
-.prologue-content,
-.chapters-content,
-.spin-offs-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.bts-content h2,
-.prologue-content h2,
-.chapters-content h2,
-.spin-offs-content h2 {
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 300;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  text-transform: capitalize;
-}
-
-.bts-content .intro,
-.prologue-content .intro,
-.chapters-content .intro,
-.spin-offs-content .intro {
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 200;
-  font-size: 1.25rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  text-align: justify;
-}
-
 /* Grid layouts */
 .bts-details,
 .prologue-details {
@@ -335,11 +329,12 @@ a:active {
 /* Card styles */
 .chapter,
 .experiment {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(41, 41, 41, 0.25);
   padding: 1.5rem;
-  border-radius: 8px;
+  border-radius: 12px;
   transition: all 500ms ease-in-out;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
 }
 
 .chapter:hover,
@@ -488,4 +483,15 @@ a:active {
   .quote {
     visibility: hidden;
   }
+}
+
+.background-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  z-index: -1;
+  pointer-events: none;
 }

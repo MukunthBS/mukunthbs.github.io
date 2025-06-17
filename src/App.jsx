@@ -45,8 +45,24 @@ function App() {
     }
   };
 
+  const getTitleIcon = (section) => {
+    switch (section) {
+      case "who-i-am":
+        return <i className="fa-solid fa-user"></i>;
+      case "what-i-built":
+        return <i className="fa-solid fa-code"></i>;
+      case "what-i-use":
+        return <i className="fa-solid fa-tools"></i>;
+      case "where-i-am":
+        return <i className="fa-solid fa-envelope"></i>;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="container">
+      <div className="background-blur"></div>
       <div className="name">Mukunth Balaramachandran Srinivasan</div>
 
       <div className="nav">
@@ -67,7 +83,10 @@ function App() {
 
           <div className={`pop-ups ${isAnimating ? "show" : ""}`}>
             <div className="title">
-              <p>portfolio/{activePopup}/</p>
+              <div className="title-content">
+                <span className="title-icon">{getTitleIcon(activePopup)}</span>
+                <p>portfolio/{activePopup}/</p>
+              </div>
               <span className="close" onClick={closePopup}>
                 x
               </span>

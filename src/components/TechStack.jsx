@@ -2,68 +2,87 @@ import React from "react";
 import "../styles/TechStack.css";
 
 const TechStack = () => {
+  const techIcons = {
+    // Languages & Tools
+    Python: "fab fa-python",
+    "C#": "fas fa-code",
+    Java: "fab fa-java",
+    SQL: "fas fa-database",
+    MATLAB: "fas fa-calculator",
+    "Assembly (8086)": "fas fa-microchip",
+    "HTML/CSS/JavaScript": "fab fa-js",
+    GLSL: "fas fa-cube",
+
+    // Libraries & Frameworks
+    React: "fab fa-react",
+    "Node.js": "fab fa-node-js",
+    OpenGL: "fas fa-cube",
+    snarkjs: "fas fa-shield-alt",
+    Tkinter: "fas fa-window-maximize",
+    Pandas: "fas fa-table",
+    NumPy: "fas fa-calculator",
+    Matplotlib: "fas fa-chart-line",
+    "D3.js": "fas fa-chart-bar",
+
+    // Software & Platforms
+    Git: "fab fa-git-alt",
+    Unity: "fas fa-gamepad",
+    Arduino: "fas fa-microchip",
+    "Adobe Photoshop/Premiere Pro": "fas fa-palette",
+    "MS Office": "fas fa-file-word",
+  };
+
+  const categories = {
+    "Languages & Tools": [
+      "Python",
+      "C#",
+      "Java",
+      "SQL",
+      "MATLAB",
+      "Assembly (8086)",
+      "HTML/CSS/JavaScript",
+      "GLSL",
+    ],
+    "Libraries & Frameworks": [
+      "React",
+      "Node.js",
+      "OpenGL",
+      "snarkjs",
+      "Tkinter",
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+      "D3.js",
+    ],
+    "Software & Platforms": [
+      "Git",
+      "Unity",
+      "Arduino",
+      "Adobe Photoshop/Premiere Pro",
+      "MS Office",
+    ],
+  };
+
   return (
     <div className="tech-container">
       <div className="tech-content">
         <h2>tech stack</h2>
         <div className="tech-grid">
-          <div className="tech-category">
-            <h3>frontend</h3>
-            <div className="tech-items">
-              <div className="tech-item">
-                <span className="tech-name">React</span>
-                <div className="tech-level">
-                  <div className="progress" style={{ width: "90%" }}></div>
-                </div>
-              </div>
-              <div className="tech-item">
-                <span className="tech-name">JavaScript</span>
-                <div className="tech-level">
-                  <div className="progress" style={{ width: "85%" }}></div>
-                </div>
-              </div>
-              <div className="tech-item">
-                <span className="tech-name">HTML/CSS</span>
-                <div className="tech-level">
-                  <div className="progress" style={{ width: "95%" }}></div>
-                </div>
+          {Object.entries(categories).map(([category, techs]) => (
+            <div key={category} className="tech-category">
+              <h3>{category}</h3>
+              <div className="tech-items">
+                {techs.map((tech) => (
+                  <div key={tech} className="tech-item">
+                    <div className="tech-icon">
+                      <i className={techIcons[tech]}></i>
+                    </div>
+                    <span className="tech-name">{tech}</span>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
-          <div className="tech-category">
-            <h3>backend</h3>
-            <div className="tech-items">
-              <div className="tech-item">
-                <span className="tech-name">Node.js</span>
-                <div className="tech-level">
-                  <div className="progress" style={{ width: "80%" }}></div>
-                </div>
-              </div>
-              <div className="tech-item">
-                <span className="tech-name">Python</span>
-                <div className="tech-level">
-                  <div className="progress" style={{ width: "75%" }}></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="tech-category">
-            <h3>tools & others</h3>
-            <div className="tech-items">
-              <div className="tech-item">
-                <span className="tech-name">Git</span>
-                <div className="tech-level">
-                  <div className="progress" style={{ width: "85%" }}></div>
-                </div>
-              </div>
-              <div className="tech-item">
-                <span className="tech-name">Docker</span>
-                <div className="tech-level">
-                  <div className="progress" style={{ width: "70%" }}></div>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
