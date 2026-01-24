@@ -5,61 +5,78 @@ const Contact = () => {
   return (
     <div className="contact-container">
       <div className="contact-content">
-        <h2>contact me</h2>
+        <div className="contact-intro">
+          <p>
+            Feel free to reach out for any queries or just a friendly hello!
+          </p>
+        </div>
+
         <div className="contact-grid">
-          <div className="contact-info">
-            <h3>get in touch</h3>
-            <p>
-              Feel free to reach out for any queries or just a friendly hello!{" "}
-              <i className="fa-solid fa-heart"></i>
-            </p>
-            <div className="contact-details">
-              <div className="contact-item">
-                <i className="fas fa-envelope"></i>
-                <span
-                  onClick={() =>
-                    (window.location.href = "mailto:bsmukunth@gmail.com")
-                  }
-                >
-                  bsmukunth@gmail.com
-                </span>
-              </div>
-              <div className="contact-item">
-                <i className="fas fa-map-marker-alt"></i>
-                <span>Salt Lake City, UT</span>
-              </div>
+          <div 
+            className="contact-card email-card"
+            onClick={() => window.location.href = "mailto:bsmukunth@gmail.com"}
+          >
+            <div className="card-icon">
+              <i className="fas fa-envelope"></i>
             </div>
-            <div className="social-links">
-              <a
-                href="https://github.com/MukunthBS"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fab fa-github"></i>
-              </a>
-              <a
-                href="https://linkedin.com/in/mukunth-bs"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fab fa-linkedin"></i>
-              </a>
+            <div className="card-content">
+              <h3>Email</h3>
+              <p className="card-value">bsmukunth@gmail.com</p>
+              <span className="card-hint">Click to send email</span>
+            </div>
+            <div className="card-arrow">
+              <i className="fas fa-arrow-right"></i>
             </div>
           </div>
-          <form className="contact-form">
-            <div className="form-group">
-              <input type="text" placeholder="Your Name" required />
+
+          <div className="contact-card location-card">
+            <div className="card-icon">
+              <i className="fas fa-map-marker-alt"></i>
             </div>
-            <div className="form-group">
-              <input type="email" placeholder="Your Email" required />
+            <div className="card-content">
+              <h3>Location</h3>
+              <p className="card-value">Salt Lake City, UT</p>
+              <span className="card-hint">Currently based in Utah</span>
             </div>
-            <div className="form-group">
-              <textarea placeholder="Your Message" required></textarea>
+          </div>
+
+          <a
+            href="https://github.com/MukunthBS"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-card social-card github-card"
+          >
+            <div className="card-icon">
+              <i className="fab fa-github"></i>
             </div>
-            <button type="submit" className="submit-btn">
-              Send<i className="fa-regular fa-paper-plane"></i>
-            </button>
-          </form>
+            <div className="card-content">
+              <h3>GitHub</h3>
+              <p className="card-value">@MukunthBS</p>
+              <span className="card-hint">View my repositories</span>
+            </div>
+            <div className="card-arrow">
+              <i className="fas fa-external-link-alt"></i>
+            </div>
+          </a>
+
+          <a
+            href="https://linkedin.com/in/mukunth-bs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-card social-card linkedin-card"
+          >
+            <div className="card-icon">
+              <i className="fab fa-linkedin"></i>
+            </div>
+            <div className="card-content">
+              <h3>LinkedIn</h3>
+              <p className="card-value">mukunth-bs</p>
+              <span className="card-hint">Connect professionally</span>
+            </div>
+            <div className="card-arrow">
+              <i className="fas fa-external-link-alt"></i>
+            </div>
+          </a>
         </div>
       </div>
     </div>

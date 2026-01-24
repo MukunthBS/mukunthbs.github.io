@@ -66,24 +66,23 @@ const TechStack = () => {
   return (
     <div className="tech-container">
       <div className="tech-content">
-        <h2>tech stack</h2>
-        <div className="tech-grid">
-          {Object.entries(categories).map(([category, techs]) => (
-            <div key={category} className="tech-category">
+        {Object.entries(categories).map(([category, techs]) => (
+          <div key={category} className="tech-section">
+            <div className="section-header">
               <h3>{category}</h3>
-              <div className="tech-items">
-                {techs.map((tech) => (
-                  <div key={tech} className="tech-item">
-                    <div className="tech-icon">
-                      <i className={techIcons[tech]}></i>
-                    </div>
-                    <span className="tech-name">{tech}</span>
-                  </div>
-                ))}
-              </div>
             </div>
-          ))}
-        </div>
+            <div className="tech-cloud">
+              {techs.map((tech) => (
+                <div key={tech} className="tech-badge">
+                  <div className="tech-badge-icon">
+                    <i className={techIcons[tech]}></i>
+                  </div>
+                  <span className="tech-badge-name">{tech}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

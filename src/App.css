@@ -117,28 +117,68 @@ a:active {
   padding-left: 0.1em;
 }
 
-/* Social Links */
+/* Social Links - Floating Deck */
 .links {
   position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #99999910;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  background-color: rgba(41, 41, 41, 0.25);
   color: white;
   text-align: center;
-  font-size: 1.5em;
-  padding: 0.5em 0;
+  font-size: 1.1em;
+  padding: 0.5rem 1.25rem;
   backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 300ms ease-in-out;
+}
+
+.links::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border-radius: 50px;
+  pointer-events: none;
+}
+
+.links:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
 }
 
 .links a {
-  padding: 0 0.5em;
-  transition: all 500ms ease-in-out;
+  padding: 0;
+  transition: all 300ms ease-in-out;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid transparent;
+  text-decoration: none;
 }
 
 .links a:hover {
-  color: #999;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
   cursor: pointer;
 }
 
@@ -192,7 +232,9 @@ a:active {
   border-radius: 10px;
   transition: all 500ms ease-in-out;
   max-height: 75vh;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .pop-ups.show {
@@ -204,7 +246,7 @@ a:active {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.25rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   position: sticky;
   top: 0;
   background-color: rgba(41, 41, 41, 0.9);
@@ -224,26 +266,11 @@ a:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 200ms ease-in-out;
 }
 
 .pop-ups .title .title-icon i {
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.7);
-  transition: all 200ms ease-in-out;
-}
-
-.pop-ups .title .title-icon:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: scale(1.05);
-}
-
-.pop-ups .title .title-icon:hover i {
-  color: rgba(255, 255, 255, 0.9);
 }
 
 .pop-ups .title p {
@@ -257,23 +284,36 @@ a:active {
 }
 
 .pop-ups .title .close {
-  padding: 0.5rem;
-  font-size: 1.75rem;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
   cursor: pointer;
   transition: all 200ms ease-in-out;
+  opacity: 1;
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .pop-ups .title .close:hover {
-  transform: rotateY(180deg);
-  text-decoration: underline;
+  opacity: 0.6;
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .pop-ups .content {
   opacity: 0;
   transform: translateY(10px);
   transition: all 500ms ease-in-out;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
 }
 
 .pop-ups.show .content {

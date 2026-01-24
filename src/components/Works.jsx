@@ -10,8 +10,7 @@ const Works = () => {
         "Privacy-preserving card game using zero-knowledge proofs for fair play without trusted parties.",
       ],
       tech: ["JavaScript", "snarkjs", "Circom", "ZK-Proofs"],
-      github: "#",
-      demo: "#",
+      github: "https://github.com/maadscientist/ZK_blackjack",
     },
     {
       title: "GPU Pipeline and Rendering Techniques",
@@ -19,8 +18,7 @@ const Works = () => {
         "Advanced 3D rendering implementation with OpenGL featuring modern graphics techniques.",
       ],
       tech: ["OpenGL", "GLSL", "C++"],
-      github: "#",
-      demo: "#",
+      github: "https://github.com/MukunthBS/Interactive-Computer-Graphics",
     },
     {
       title: "'Moe' - A Custom Programming Language Interpreter",
@@ -28,8 +26,7 @@ const Works = () => {
         "Racket-based interpreter supporting core programming features with comprehensive testing.",
       ],
       tech: ["Racket", "Testing"],
-      github: "#",
-      demo: "#",
+      github: "https://github.com/MukunthBS/moe",
     },
     {
       title:
@@ -38,8 +35,6 @@ const Works = () => {
         "NLP system for Tamil language with high-accuracy entity recognition and sentiment analysis.",
       ],
       tech: ["Python", "BERT", "React", "NLP"],
-      github: "#",
-      demo: "#",
     },
     {
       title: "Neural Style Transfer Software",
@@ -47,57 +42,44 @@ const Works = () => {
         "Interactive image style transfer tool using VGG19 with customizable parameters.",
       ],
       tech: ["Python", "VGG19", "Tkinter"],
-      github: "#",
-      demo: "#",
+      github: "https://github.com/MukunthBS/Neural-Style-Transfer-GUI",
     },
   ];
 
   return (
     <div className="works-container">
       <div className="works-content">
-        <h2>my works</h2>
         <div className="projects-grid">
           {projects.map((project, index) => (
             <div key={index} className="project-card">
               <div className="project-card-inner">
                 <div className="project-card-front">
-                  <h3>{project.title}</h3>
-                  <div className="project-description">
-                    {project.description.map((desc, i) => (
-                      <p key={i} dangerouslySetInnerHTML={{ __html: desc }} />
-                    ))}
+                  <div className="project-card-content">
+                    <h3>{project.title}</h3>
+                    <div className="project-description">
+                      {project.description.map((desc, i) => (
+                        <p key={i} dangerouslySetInnerHTML={{ __html: desc }} />
+                      ))}
+                    </div>
+                    <div className="project-tech">
+                      {project.tech.map((tech, i) => (
+                        <span key={i} className="tech-tag">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <div className="project-tech">
-                    {project.tech.map((tech, i) => (
-                      <span key={i} className="tech-tag">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div className="project-card-back">
-                  <div className="project-links">
+                  {project.github && (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="project-link"
+                      className="project-link-bottom"
                     >
                       <i className="fab fa-github"></i>
                       View Code
                     </a>
-                    {project.demo && (
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="project-link"
-                      >
-                        <i className="fas fa-external-link-alt"></i>
-                        Live Demo
-                      </a>
-                    )}
-                  </div>
+                  )}
                 </div>
               </div>
             </div>

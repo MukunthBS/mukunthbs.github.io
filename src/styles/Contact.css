@@ -1,42 +1,52 @@
 .contact-container {
   padding: 2rem;
-  padding-top: 0;
   color: white;
 }
 
 .contact-content {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-.contact-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
+.contact-intro {
   text-align: center;
+  margin: 1.5rem 0;
+  padding: 0 1rem;
+}
+
+.contact-intro p {
+  color: rgba(255, 255, 255, 0.8);
   font-family: "Josefin Sans", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.9;
   font-weight: 300;
-  color: #ffffff;
+  margin: 0;
 }
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
 }
 
-.contact-info,
-.contact-form {
-  padding: 2rem;
+.contact-card {
   background-color: rgba(41, 41, 41, 0.25);
-  border-radius: 10px;
+  border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.25rem;
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
+  transition: all 300ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
-.contact-info::before,
-.contact-form::before {
+.contact-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -44,174 +54,125 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.03) 0%,
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
     rgba(255, 255, 255, 0) 100%
   );
-  pointer-events: none;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
 }
 
-.contact-info h3,
-.contact-form h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 300;
+.contact-card:hover::before {
+  opacity: 1;
+}
+
+.contact-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 300ms ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-card:hover .card-icon {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-icon i {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 300ms ease-in-out;
+}
+
+.contact-card:hover .card-icon i {
   color: #ffffff;
-  text-align: center;
-  position: relative;
 }
 
-.contact-info h3::after,
-.contact-form h3::after {
-  content: "";
-  position: absolute;
-  bottom: -0.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.2) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-}
-
-.contact-info p {
-  color: #bbbbbb;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 1rem;
-  line-height: 1.8;
-  font-weight: 300;
-  position: relative;
-  padding: 1rem;
-}
-
-.contact-details {
+.card-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.02);
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  gap: 0.5rem;
+  position: relative;
+  z-index: 1;
+  flex: 1;
 }
 
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  color: #bbbbbb;
+.card-content h3 {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
   transition: all 300ms ease-in-out;
 }
 
-.contact-item i {
-  font-size: 1.2rem;
-  color: #ffffff;
+.contact-card:hover .card-content h3 {
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.contact-item:first-of-type:hover {
+.card-value {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
   color: #ffffff;
+  margin: 0;
+  transition: all 300ms ease-in-out;
+}
+
+.card-hint {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 0.25rem;
+  transition: all 300ms ease-in-out;
+}
+
+.contact-card:hover .card-hint {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.card-arrow {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+  z-index: 1;
+}
+
+.contact-card:hover .card-arrow {
+  opacity: 1;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.email-card {
   cursor: pointer;
 }
 
-.form-group {
-  margin-bottom: 1.5rem;
-  margin-right: 1.5rem;
+.location-card {
+  cursor: default;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #bbbbbb;
-  font-family: "Josefin Sans", sans-serif;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 0.8rem;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
-  color: #ffffff;
-  font-family: "Josefin Sans", sans-serif;
-  transition: all 300ms ease-in-out;
-  font-size: 0.9rem;
-  font-weight: 300;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: rgba(255, 255, 255, 0.2);
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.submit-btn {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  padding: 0.8rem 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
+.social-card {
   cursor: pointer;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 300;
-  transition: all 300ms ease-in-out;
 }
 
-.submit-btn i {
-  margin-left: 0.4rem;
-  transition: all 300ms ease-in-out;
-}
-
-.submit-btn:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.submit-btn:hover i {
-  transform: translate(5px, -5px) scale(1.25) rotate(10deg);
-}
-
-.social-links {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 2rem;
-  justify-content: center;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.social-links a {
-  color: #bbbbbb;
-  font-size: 1.5rem;
-  transition: all 300ms ease-in-out;
-  padding: 0.5rem;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3rem;
-  height: 3rem;
-}
-
-.social-links a:hover {
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.fa-regular.fa-heart {
+  color: rgb(227, 0, 0);
 }
 
 @media (max-width: 768px) {
@@ -219,16 +180,41 @@
     padding: 1rem;
   }
 
-  .contact-content h2 {
-    font-size: 2rem;
+  .contact-intro {
+    margin-bottom: 2rem;
+  }
+
+  .contact-intro p {
+    font-size: 1rem;
   }
 
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.25rem;
   }
-}
 
-.fa-solid.fa-heart {
-  color: rgb(227, 0, 0);
+  .contact-card {
+    padding: 1rem;
+  }
+
+  .card-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .card-icon i {
+    font-size: 1rem;
+  }
+
+  .card-content h3 {
+    font-size: 0.9rem;
+  }
+
+  .card-value {
+    font-size: 0.95rem;
+  }
+
+  .card-hint {
+    font-size: 0.75rem;
+  }
 }
